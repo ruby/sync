@@ -1,6 +1,7 @@
 begin
   require_relative "lib/sync"
 rescue LoadError
+  # for Ruby core repository
   require_relative "sync"
 end
 
