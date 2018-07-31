@@ -1,4 +1,8 @@
-require_relative "lib/sync"
+begin
+  require_relative "lib/sync"
+rescue LoadError
+  require_relative "sync"
+end
 
 Gem::Specification.new do |spec|
   spec.name          = "sync"
