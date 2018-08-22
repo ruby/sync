@@ -1,8 +1,6 @@
 # Sync
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sync`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A module that provides a two-phase lock with a counter.
 
 ## Installation
 
@@ -22,7 +20,47 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Sync_m, Synchronizer_m
+
+```
+obj.extend(Sync_m)
+```
+
+or
+
+```
+class Foo
+    include Sync_m
+    :
+end
+```
+
+```
+Sync_m#sync_mode
+Sync_m#sync_locked?, locked?
+Sync_m#sync_shared?, shared?
+Sync_m#sync_exclusive?, sync_exclusive?
+Sync_m#sync_try_lock, try_lock
+Sync_m#sync_lock, lock
+Sync_m#sync_unlock, unlock
+```
+
+### Sync, Synchronizer:
+
+```
+sync = Sync.new
+```
+
+```
+Sync#mode
+Sync#locked?
+Sync#shared?
+Sync#exclusive?
+Sync#try_lock(mode) -- mode = :EX, :SH, :UN
+Sync#lock(mode)     -- mode = :EX, :SH, :UN
+Sync#unlock
+Sync#synchronize(mode) {...}
+```
 
 ## Development
 
