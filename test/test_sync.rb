@@ -59,7 +59,7 @@ class SyncTest < Test::Unit::TestCase
     }
 
     sleep 0.1 until t.stop?
-    sleep 1 if RubyVM::MJIT.enabled? # t.stop? behaves unexpectedly with --jit-wait
+    sleep 1 if defined?(RubyVM::JIT) && RubyVM::JIT.enabled? # t.stop? behaves unexpectedly with --jit-wait
     t.raise
     t.join
 
