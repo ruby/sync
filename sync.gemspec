@@ -16,9 +16,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/ruby/sync"
   spec.license       = "BSD-2-Clause"
 
-  spec.files         = [".gitignore", ".travis.yml", "Gemfile", "LICENSE.txt", "README.md", "Rakefile", "bin/console", "bin/setup", "lib/sync.rb", "sync.gemspec"]
+  spec.files         = ["LICENSE.txt", "README.md", "lib/sync.rb"]
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = []
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler"
