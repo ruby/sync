@@ -31,7 +31,6 @@ or
 ```
 class Foo
     include Sync_m
-    :
 end
 ```
 
