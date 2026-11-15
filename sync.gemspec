@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/ruby/sync"
   spec.license       = "BSD-2-Clause"
 
-  spec.files         = ["LICENSE.txt", "README.md", "lib/sync.rb"]
+  spec.files         = ["BSDL", "COPYING", "README.md", "lib/sync.rb"]
   spec.bindir        = "exe"
   spec.executables   = []
   spec.require_paths = ["lib"]
