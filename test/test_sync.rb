@@ -8,6 +8,25 @@ class SyncTest < Test::Unit::TestCase
     include Sync_m
   end
 
+  class KeywordBase
+    attr_reader :a
+
+    def initialize(a:)
+      @a = a
+    end
+  end
+
+  class KeywordTester < KeywordBase
+    include Sync_m
+  end
+
+  def test_initialize_forwards_keywords
+    tester = KeywordTester.new(a: 1)
+
+    assert_equal(1, tester.a)
+    assert_equal(false, tester.sync_locked?)
+  end
+
   def test_sync_lock_and_wakeup
     tester = Tester.new
 
