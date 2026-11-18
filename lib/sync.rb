@@ -264,6 +264,7 @@ module Sync_m
     super
     sync_initialize
   end
+  ruby2_keywords(:initialize) if respond_to?(:ruby2_keywords, true)
 
   def sync_try_lock_sub(m)
     case m
